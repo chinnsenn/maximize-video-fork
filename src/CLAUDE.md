@@ -2,7 +2,7 @@
 > L2 | 父级: /CLAUDE.md
 
 成员清单
-userscript.meta.js: Userscript 元数据头，保留原作者冻猫署名与原版 Greasy Fork 链接。
+userscript.meta.js: Userscript 元数据头，保留原作者冻猫署名，声明维护分支主页、反馈入口与更新链接。
 state.js: gv 全局运行时状态，保存全屏、iframe、按钮、播放器父链等共享状态。
 rules.js: 站点与通用播放器 selector 规则，为鼠标探测和自动探测提供候选播放器。
 i18n.js: iframe 判定与中英文按钮文案初始化，入口执行前写入 gv。

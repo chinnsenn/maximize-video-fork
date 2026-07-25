@@ -38,7 +38,10 @@ if (userscript !== committedUserscript) fail("Generated dist and committed outpu
 for (const required of [
   "// ==UserScript==",
   "// @author              冻猫",
-  "// @homepageURL         https://greasyfork.org/zh-CN/scripts/4870-maximize-video",
+  "// @homepageURL         https://github.com/chinnsenn/maximize-video-fork",
+  "// @supportURL          https://github.com/chinnsenn/maximize-video-fork/issues",
+  "// @downloadURL         https://raw.githubusercontent.com/chinnsenn/maximize-video-fork/greasyfork/maximize-video-fork.user.js",
+  "// @updateURL           https://raw.githubusercontent.com/chinnsenn/maximize-video-fork/greasyfork/maximize-video-fork.user.js",
   "// @match               *://*/*",
   "// ==/UserScript==",
 ]) {
