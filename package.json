@@ -1,0 +1,14 @@
+{
+  "name": "maximize-video-fork",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Split-source build pipeline for the Maximize Video userscript fork.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
