@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 src/userscript.meta.js 与 src/*.js 片段文件
- * [OUTPUT]: 对外提供 dist/maximize-video-fork.user.js 与根目录兼容产物 maximize-video-fork.js
+ * [OUTPUT]: 对外提供 dist、outputs 与根目录兼容 userscript 产物
  * [POS]: scripts 的构建入口，把分片源码恢复成 Greasy Fork 可发布的单文件 userscript
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
@@ -44,8 +44,11 @@ ${body}
 `
 
 const distDir = path.join(root, "dist")
+const outputsDir = path.join(root, "outputs")
 fs.mkdirSync(distDir, { recursive: true })
+fs.mkdirSync(outputsDir, { recursive: true })
 fs.writeFileSync(path.join(distDir, outputName), userscript)
+fs.writeFileSync(path.join(outputsDir, outputName), userscript)
 fs.writeFileSync(path.join(root, "maximize-video-fork.js"), userscript)
 
-console.log(`Built ${path.join("dist", outputName)} (${userscript.length} bytes)`)
+console.log(`Built ${path.join("outputs", outputName)} (${userscript.length} bytes)`)

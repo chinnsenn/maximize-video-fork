@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url"
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const distFile = path.join(root, "dist", "maximize-video-fork.user.js")
+const outputsFile = path.join(root, "outputs", "maximize-video-fork.user.js")
 const sourceDir = path.join(root, "src")
 const sourceFiles = fs
   .readdirSync(sourceDir)
@@ -30,7 +31,9 @@ childProcess.execFileSync(process.execPath, [path.join(root, "scripts", "build.m
 })
 
 const userscript = fs.readFileSync(distFile, "utf8")
+const committedUserscript = fs.readFileSync(outputsFile, "utf8")
 if (userscript.includes("runtime.runtime")) fail("Invalid nested runtime reference: runtime.runtime")
+if (userscript !== committedUserscript) fail("Generated dist and committed outputs userscripts differ")
 
 for (const required of [
   "// ==UserScript==",
@@ -51,6 +54,11 @@ for (const file of sourceFiles) {
 }
 
 childProcess.execFileSync(process.execPath, ["--check", distFile], {
+  cwd: root,
+  stdio: "inherit",
+})
+
+childProcess.execFileSync("git", ["diff", "--exit-code", "--", "outputs/maximize-video-fork.user.js"], {
   cwd: root,
   stdio: "inherit",
 })

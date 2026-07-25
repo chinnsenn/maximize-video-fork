@@ -10,6 +10,10 @@ scripts/ - Node.js 构建与校验入口 (2子文件: build.mjs/check.mjs)
 </directory>
 
 <directory>
+outputs/ - 提交到 main 的 Greasy Fork 同步产物 (1子文件: maximize-video-fork.user.js)
+</directory>
+
+<directory>
 .github/workflows/ - GitHub Actions 编译与 Greasy Fork 发布分支流水线 (2子文件: build.yml/publish-greasyfork.yml)
 </directory>
 
@@ -25,4 +29,4 @@ README.md - 本地构建与 Greasy Fork webhook 发布说明
 maximize-video-fork.js - 构建生成的根目录兼容 userscript 产物
 </config>
 
-法则: 源码在 src，产物由 scripts/build.mjs 生成，Greasy Fork 只消费 dist 单文件。
+法则: 源码在 src，产物由 scripts/build.mjs 生成，Greasy Fork 消费 main/outputs 单文件。

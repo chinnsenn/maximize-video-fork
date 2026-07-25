@@ -9,7 +9,7 @@
 // @supportURL          https://greasyfork.org/zh-CN/scripts/4870-maximize-video/feedback
 // @match               *://*/*
 // @exclude             *www.w3school.com.cn*
-// @version             1.0.0
+// @version             1.0.1
 // @run-at              document-start
 // ==/UserScript==
 
