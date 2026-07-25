@@ -14,7 +14,7 @@ scripts/ - Node.js 构建与校验入口 (2子文件: build.mjs/check.mjs)
 </directory>
 
 <config>
-package.json - npm 脚本与 Node 20 运行约束
+package.json - npm 脚本与 Node 20+ 本地运行约束，CI 使用 Node 24
 </config>
 
 <config>
